@@ -1,0 +1,16 @@
+
+
+.card-title,
+  .card-text {
+    color: black; /* Chỉnh màu chữ tại đây */
+  }
+
+  .img-coin{
+    width: 60px;
+    height: 70px;
+  }
+  .highlight {
+    font-size: 1.2em; /* Kích thước chữ lớn hơn */
+    font-weight: bold; /* Chữ in đậm */
+    color: #ff0000; /* Màu chữ nổi bật */
+  }

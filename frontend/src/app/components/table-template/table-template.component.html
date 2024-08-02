@@ -1,0 +1,16 @@
+<table>
+    <thead>
+      <tr>
+        <th *ngFor="let column of tableConfig.columns">{{ column.header }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of data" (click) = clickRowItem(row)>
+        <td *ngFor="let column of tableConfig.columns">{{ row[column.field] }}</td>
+      </tr>
+    </tbody>
+</table>
+
+<ng-container *ngIf="isPaging">
+  <app-paging></app-paging>
+</ng-container>

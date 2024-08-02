@@ -1,0 +1,44 @@
+<div class="container mx-auto">
+    <h1 class="text-center mt-5 mb-4">Market Prices</h1>
+    <div class="input-group mt-5 mb-4">
+      <input type="text" class="form-control" placeholder="symbol" [(ngModel)]="symbol">
+      <div class="input-group-append">
+          <button class="btn btn-primary" type="button" (click)="searchSymBol()">Search</button>
+      </div>
+  </div>
+    <div class="row">
+      <div class="col-6 col-md-3 mb-4" *ngFor="let item of items">
+        <div class="card h-100" (click)="handelCoin(item)" style="cursor: pointer;">
+          <div class="card-body text-center">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" class="img-fluid img-coin" alt="Bitcoin">
+            <h5 class="card-title mt-3 mb-2">{{item.symbol}}</h5>
+            <p class="card-text mb-3">Price: ${{item.lastPrice}}</p>
+            <div class="change positive">{{item.priceChangePercent}} %</div>
+            <a class="btn btn-primary mt-3">Trade now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <p><strong class="highlight">Symbol:</strong> {{itemChoose.symbol}}</p>
+        <p><strong class="highlight">Last Price:</strong> ${{itemChoose.lastPrice}}</p>
+        <p><strong class="highlight">Price Change:</strong> ${{itemChoose.priceChange}}</p>
+        <p><strong class="highlight">Price Change Percent:</strong> {{itemChoose.priceChangePercent}} %</p>
+        <p><strong class="highlight">Previous Close Price:</strong> ${{itemChoose.prevClosePrice}}</p>
+        <p><strong class="highlight">Bid Price:</strong>  ${{itemChoose.bidPrice}}</p>
+        <p><strong class="highlight">Ask Price:</strong> ${{itemChoose.askPrice}}</p>
+      </div>
+      <div class="col-md-6">
+        <p><strong class="highlight">Open Price:</strong> ${{itemChoose.openPrice}}</p>
+        <p><strong class="highlight">High Price:</strong>  ${{itemChoose.highPrice}}</p>
+        <p><strong class="highlight">Low Price:</strong> ${{itemChoose.lowPrice}}</p>
+        <p><strong class="highlight">Volume:</strong> {{itemChoose.volume}}</p>
+        <p><strong class="highlight">Quote Volume:</strong> {{itemChoose.quoteVolume}}</p>
+        <p><strong class="highlight">Open Time:</strong> 1714987172135</p>
+        <p><strong class="highlight">Close Time:</strong> 1714987186946</p>
+      </div>
+    </div>
+</div>
+
